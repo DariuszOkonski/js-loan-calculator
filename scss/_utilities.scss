@@ -1,10 +1,11 @@
 .error {
   background-color: $first-red;
   border: 1px solid $second-red;
-  padding: 15px 10px;
+  padding: 10px 5px;
   text-align: center;
   color: $first-dark;
   border-radius: 5px;
+  font-size: 0.8rem;
 }
 
 .input-calculate {
@@ -38,5 +39,8 @@
   background-color: $first-dark;
   border-radius: 5px;
   padding: 10px;
+  margin: 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   cursor: pointer;
 }
