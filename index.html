@@ -12,7 +12,34 @@
 </head>
 
 <body>
-  <h1>Loan Calculator</h1>
+  <main class="main">
+
+    <div class="error">
+      Please check your numbers
+    </div>
+
+    <h1 class="main__header">Loan Calculator</h1>
+
+    <form>
+      <div class="input-calculate">
+        <div class="input-calculate__left">$</div>
+        <input type="number" class="input-calculate__right" placeholder="Loan Amount">
+      </div>
+
+      <div class="input-calculate">
+        <div class="input-calculate__left">%</div>
+        <input type="number" class="input-calculate__right" placeholder="Interest">
+      </div>
+
+      <div class="input-calculate">
+        <div class="input-calculate__left">Years</div>
+        <input type="number" class="input-calculate__right" placeholder="Years To Repay">
+      </div>
+
+      <input type="submit" value="Calculate" class="btn">
+    </form>
+
+  </main>
 
   <script src="js/script.js"></script>
 </body>
