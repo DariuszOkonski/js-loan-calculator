@@ -1,0 +1,42 @@
+.error {
+  background-color: $first-red;
+  border: 1px solid $second-red;
+  padding: 15px 10px;
+  text-align: center;
+  color: $first-dark;
+  border-radius: 5px;
+}
+
+.input-calculate {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+
+  &__left {
+    background-color: $third-dark;
+    color: $first-light;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-right: 1px;
+  }
+
+  &__right {
+    flex-grow: 1;
+    border: 1px solid $third-dark;
+    color: $third-dark;
+    border-radius: 5px;
+    padding: 10px;
+  }
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  border: 1px solid $first-dark;
+  color: $first-light;
+  background-color: $first-dark;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
