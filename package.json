@@ -1,0 +1,11 @@
+{
+  "name": "002-loancalculator",
+  "version": "1.0.0",
+  "description": "Simple loan calculator app in javascript",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dariusz Okonski",
+  "license": "ISC"
+}
