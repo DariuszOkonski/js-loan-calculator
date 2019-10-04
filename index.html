@@ -13,7 +13,7 @@
 
 <body>
   <main class="main">
-    <div class="error">
+    <div class="error error-js">
       Please check your numbers
     </div>
 
@@ -22,44 +22,44 @@
     <form>
       <div class="input-calculate">
         <div class="input-calculate__left">$</div>
-        <input type="number" class="input-calculate__right" placeholder="Loan Amount">
+        <input type="number" class="input-calculate__right input-loan-amount-js" placeholder="Loan Amount">
       </div>
 
       <div class="input-calculate">
         <div class="input-calculate__left">%</div>
-        <input type="number" class="input-calculate__right" placeholder="Interest">
+        <input type="number" class="input-calculate__right input-interest-js" placeholder="Interest">
       </div>
 
       <div class="input-calculate">
         <div class="input-calculate__left">Years</div>
-        <input type="number" class="input-calculate__right" placeholder="Years To Repay">
+        <input type="number" class="input-calculate__right input-years-to-pay-js" placeholder="Years To Repay">
       </div>
 
-      <input type="submit" value="Calculate" class="btn">
+      <input type="submit" value="Calculate" class="btn btn-calculate-js">
     </form>
 
-    <input type="submit" value="Clear" class="btn">
+    <input type="submit" value="Clear" class="btn btn-clear-js">
 
-    <section class="loading">
+    <section class="loading loading-js">
       <img class="loading__gif" src="img/loading.gif" alt="loading">
     </section>
 
-    <section class="results">
+    <section class="results results-js">
       <h2 class="results__header">Results</h2>
 
       <div class="input-calculate">
         <div class="input-calculate__left">Monthly Payment</div>
-        <input type="number" class="input-calculate__right" disabled>
+        <input type="number" class="input-calculate__right output-monthly-payment-js" disabled>
       </div>
 
       <div class="input-calculate">
         <div class="input-calculate__left">Total Payment</div>
-        <input type="number" class="input-calculate__right" disabled>
+        <input type="number" class="input-calculate__right output-total-payment-js" disabled>
       </div>
 
       <div class="input-calculate">
         <div class="input-calculate__left">Total Interest</div>
-        <input type="number" class="input-calculate__right" disabled>
+        <input type="number" class="input-calculate__right output-total-intrest-js" disabled>
       </div>
     </section>
 
