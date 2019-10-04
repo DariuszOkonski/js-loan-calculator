@@ -43,14 +43,15 @@ h3 {
   color: #fff;
   padding: 10px;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   margin-right: 1px;
-}
-
-.input-calculate__right {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+.input-calculate__right {
+  width: 50%;
   border: 1px solid #6C757D;
   color: #6C757D;
   border-radius: 5px;
@@ -69,6 +70,12 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
+  -webkit-transition: background-color .2s ease;
+  transition: background-color .2s ease;
+}
+
+.btn:hover {
+  background-color: #6C757D;
 }
 
 body {
@@ -100,5 +107,18 @@ body {
   display: block;
   width: 33%;
   margin: 0 auto;
+}
+
+.results__header {
+  text-align: center;
+  margin: 20px 0;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+
+.results .input-calculate__right {
+  background-color: #c6c6c7;
 }
 /*# sourceMappingURL=style.css.map */
