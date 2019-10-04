@@ -95,4 +95,10 @@ body {
   text-transform: uppercase;
   font-size: 1.4rem;
 }
+
+.loading__gif {
+  display: block;
+  width: 33%;
+  margin: 0 auto;
+}
 /*# sourceMappingURL=style.css.map */

@@ -22,3 +22,12 @@ body {
     font-size: 1.4rem;
   }
 }
+
+.loading {
+
+  &__gif {
+    display: block;
+    width: 33%;
+    margin: 0 auto;
+  }
+}
