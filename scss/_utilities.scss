@@ -8,6 +8,15 @@
   font-size: 0.8rem;
 }
 
+@mixin headers {
+  text-align: center;
+  margin: 20px 0;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+
 .input-calculate {
   display: flex;
   width: 100%;
@@ -18,12 +27,13 @@
     color: $first-light;
     padding: 10px;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-right: 1px;
+    flex-grow: 1;
   }
 
   &__right {
-    flex-grow: 1;
+    width: 50%;
     border: 1px solid $third-dark;
     color: $third-dark;
     border-radius: 5px;
@@ -43,4 +53,9 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
+  transition: background-color .2s ease;
+
+  &:hover {
+    background-color: $third-dark;
+  }
 }
