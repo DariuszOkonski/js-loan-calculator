@@ -19,20 +19,22 @@
 
     <h1 class="main__header">Loan Calculator</h1>
 
-    <form class="form-js">
+    <form class="form-js" novalidate>
       <div class="input-calculate">
         <div class="input-calculate__left">$</div>
-        <input type="number" class="input-calculate__right input-loan-amount-js" placeholder="Loan Amount">
+        <input type="number" class="input-calculate__right input-loan-amount-js" placeholder="Loan Amount" min="1"
+          max="100000">
       </div>
 
       <div class="input-calculate">
         <div class="input-calculate__left">%</div>
-        <input type="number" class="input-calculate__right input-interest-js" placeholder="Interest">
+        <input type="number" class="input-calculate__right input-interest-js" placeholder="Interest" min="0" max="1000">
       </div>
 
       <div class="input-calculate">
         <div class="input-calculate__left">Years</div>
-        <input type="number" class="input-calculate__right input-years-to-pay-js" placeholder="Years To Repay">
+        <input type="number" class="input-calculate__right input-years-to-pay-js" placeholder="Years To Repay" min="0"
+          max="50">
       </div>
 
       <input type="submit" value="Calculate" class="btn btn-calculate-js">
