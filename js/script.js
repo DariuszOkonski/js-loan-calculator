@@ -16,14 +16,6 @@ const dom = {
   outputTotalInterest: document.querySelector('.output-total-intrest-js'),
 }
 
-const createLoan = (amount, interestRate, timePeriod) => {
-  const loanCalculator = new LoanCalculator(10000, 3, 1);
-  console.log(loanCalculator.monthly().toFixed(2));
-  console.log(loanCalculator.monthlyPayment().toFixed(2));
-  console.log(loanCalculator.totalPayment().toFixed(2));
-  console.log(loanCalculator.totalInterest().toFixed(2));
-}
-
 const displayOffAll = () => {
   dom.errorNode.style.display = 'none';
   dom.btnClear.style.display = 'none';
@@ -54,6 +46,10 @@ const takeInputData = () => {
 }
 
 const displayErrorOn = () => {
+  dom.loadingContainer.style.display = 'none';
+  dom.btnClear.style.display = 'none';
+  dom.resultsContainer.style.display = 'none';
+
   dom.errorNode.style.display = 'block';
   dom.inputLoanAmount.setAttribute('disabled', 'on');
   dom.inputLoanAmount.value = '';
@@ -66,7 +62,7 @@ const displayErrorOn = () => {
 
   setTimeout(() => {
     displayErrorOff();
-  }, 2000);
+  }, 3000);
 }
 
 const displayErrorOff = () => {
@@ -78,22 +74,59 @@ const displayErrorOff = () => {
   dom.btnCalculate.style.backgroundColor = '#23272B';
 }
 
+const createLoan = ({
+  amount,
+  interestRate,
+  timePeriod
+}) => {
+  dom.loadingContainer.style.display = 'none';
+  dom.btnClear.style.display = 'block';
+  dom.resultsContainer.style.display = 'block';
+  dom.btnCalculate.removeAttribute('disabled');
+  dom.btnCalculate.style.backgroundColor = '#23272B';
+
+  const loanCalculator = new LoanCalculator(amount, interestRate, timePeriod);
+
+  dom.outputMonthlyPayment.value = loanCalculator.monthlyPayment().toFixed(2);
+  dom.outputTotalPayment.value = loanCalculator.totalPayment().toFixed(2);
+  dom.outputTotalInterest.value = loanCalculator.totalInterest().toFixed(2);
+}
+
 const calculate = (e) => {
   e.preventDefault();
 
   const inputData = takeInputData();
 
-  if (!inputData.value) {
+  if (!inputData.valid) {
     displayErrorOn();
   } else {
-    console.log(inputData);
+    dom.btnClear.style.display = 'none';
+    dom.resultsContainer.style.display = 'none';
+    dom.loadingContainer.style.display = 'block';
+    dom.btnCalculate.setAttribute('disabled', 'on');
+    dom.btnCalculate.style.backgroundColor = '#6C757D';
+
+    const randomTime = Math.floor((Math.random() * 3000) + 1000);
+    console.log(randomTime);
+
+    setTimeout(() => {
+      createLoan(inputData);
+    }, randomTime);
   }
+}
 
+const clear = () => {
+  dom.inputLoanAmount.value = '';
+  dom.inputInterest.value = '';
+  dom.inputYearsToPay.value = '';
 
-  console.log('calculate');
+  dom.btnClear.style.display = 'none';
+  dom.loadingContainer.style.display = 'none';
+  dom.resultsContainer.style.display = 'none';
 }
 
 
 
 displayOffAll();
 dom.form.addEventListener('submit', calculate);
+dom.btnClear.addEventListener('click', clear);
