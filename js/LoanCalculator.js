@@ -23,11 +23,3 @@ class LoanCalculator {
     return ((this.monthly() * this._timePeriod) - this._amount);
   }
 }
-
-const loanCalculator = new LoanCalculator(10000, 3, 1);
-
-console.log(loanCalculator);
-console.log(loanCalculator.monthly().toFixed(2));
-console.log(loanCalculator.monthlyPayment().toFixed(2));
-console.log(loanCalculator.totalPayment().toFixed(2));
-console.log(loanCalculator.totalInterest().toFixed(2));
