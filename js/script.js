@@ -31,13 +31,48 @@ const displayOffAll = () => {
   dom.resultsContainer.style.display = 'none';
 }
 
+const takeInputData = () => {
+  let amount = parseFloat(dom.inputLoanAmount.value);
+  let interestRate = parseFloat(dom.inputInterest.value);
+  let timePeriod = parseFloat(dom.inputYearsToPay.value);
+  let valid = false;
 
+  if (isNaN(amount) || isNaN(interestRate) || isNaN(timePeriod)) {
+    valid = false;
+  } else if (amount < 1 || amount > 100000 || interestRate < 0 || interestRate > 1000 || timePeriod < 0 || timePeriod > 50) {
+    valid = false;
+  } else {
+    valid = true;
+  }
+
+  return {
+    amount,
+    interestRate,
+    timePeriod,
+    valid
+  }
+}
+
+const displayError = () => {
+  dom.errorNode.style.display = 'block';
+}
 
 const calculate = (e) => {
   e.preventDefault();
 
+  const inputData = takeInputData();
+
+  if (!inputData.value) {
+    displayError();
+  } else {
+    console.log(inputData);
+  }
+
+
   console.log('calculate');
 }
+
+
 
 displayOffAll();
 dom.form.addEventListener('submit', calculate);
