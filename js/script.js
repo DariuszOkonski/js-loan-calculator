@@ -53,8 +53,29 @@ const takeInputData = () => {
   }
 }
 
-const displayError = () => {
+const displayErrorOn = () => {
   dom.errorNode.style.display = 'block';
+  dom.inputLoanAmount.setAttribute('disabled', 'on');
+  dom.inputLoanAmount.value = '';
+  dom.inputInterest.setAttribute('disabled', 'on');
+  dom.inputInterest.value = '';
+  dom.inputYearsToPay.setAttribute('disabled', 'on');
+  dom.inputYearsToPay.value = '';
+  dom.btnCalculate.setAttribute('disabled', 'on');
+  dom.btnCalculate.style.backgroundColor = '#6C757D';
+
+  setTimeout(() => {
+    displayErrorOff();
+  }, 2000);
+}
+
+const displayErrorOff = () => {
+  dom.errorNode.style.display = 'none';
+  dom.inputLoanAmount.removeAttribute('disabled');
+  dom.inputInterest.removeAttribute('disabled');
+  dom.inputYearsToPay.removeAttribute('disabled');
+  dom.btnCalculate.removeAttribute('disabled');
+  dom.btnCalculate.style.backgroundColor = '#23272B';
 }
 
 const calculate = (e) => {
@@ -63,7 +84,7 @@ const calculate = (e) => {
   const inputData = takeInputData();
 
   if (!inputData.value) {
-    displayError();
+    displayErrorOn();
   } else {
     console.log(inputData);
   }
